@@ -118,7 +118,7 @@ scripts\quick_setup.cmd
 
 After setup, builds will be **50-90% faster** on subsequent runs!
 
-#### 📝 Daily Development
+#### Daily Development
 
 The development scripts **automatically use sccache** if installed:
 
