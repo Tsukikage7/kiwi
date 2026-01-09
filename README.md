@@ -116,7 +116,7 @@ cargo run --release -- --config cluster.conf --init-cluster
 
 ### Recommended Development Workflow
 
-#### 🚀 First-time Setup (Automatic Prompt)
+#### First-time Setup (Automatic Prompt)
 
 When you first run `build` or `run`, the script will automatically prompt you to install sccache and cargo-watch:
 
@@ -138,7 +138,7 @@ scripts\quick_setup.cmd
 
 After setup, builds will be **50-90% faster** on subsequent runs!
 
-#### 📝 Daily Development
+#### Daily Development
 
 The development scripts **automatically use sccache** if installed:
 
@@ -188,16 +188,16 @@ For detailed integration documentation, see [docs/raft/OPENRAFT_INTEGRATION.md](
 
 ## Development Roadmap
 
-- ✅ Dual runtime architecture for performance isolation
-- ✅ Message channel-based asynchronous communication
-- ✅ Basic Redis command support (GET, SET, DEL, etc.)
-- ✅ OpenRaft integration using Adaptor pattern
-- 🚧 Support for most Redis commands
-- 🚧 Complete cluster mode implementation
-- 🚧 Extended command support and command execution optimization
-- 🚧 Enhanced modular extension capabilities with examples
-- 🚧 Comprehensive development documentation and user guides
-- 🚧 Comprehensive metrics and monitoring
+- Dual runtime architecture for performance isolation
+- Message channel-based asynchronous communication
+- Basic Redis command support (GET, SET, DEL, etc.)
+- OpenRaft integration using Adaptor pattern
+- Support for most Redis commands
+- Complete cluster mode implementation
+- Extended command support and command execution optimization
+- Enhanced modular extension capabilities with examples
+- Comprehensive development documentation and user guides
+- Comprehensive metrics and monitoring
 
 ## Documentation
 

@@ -86,7 +86,7 @@ export CARGO_BUILD_JOBS=$(nproc 2>/dev/null || sysctl -n hw.ncpu 2>/dev/null || 
 
 # Debug mode configuration
 if [ -n "$DEBUG_MODE" ]; then
-	info "🐛 Debug mode enabled - using Cargo_debug.toml"
+	info "Debug mode enabled - using Cargo_debug.toml"
 
 	# Detect Rust toolchain for compatible flags
 	RUST_TOOLCHAIN=$(detect_rust_toolchain)
@@ -94,10 +94,10 @@ if [ -n "$DEBUG_MODE" ]; then
 	# Set environment variables for debugging
 	if [ "$RUST_TOOLCHAIN" = "nightly" ]; then
 		export RUSTFLAGS="-g -Zmacro-backtrace"
-		info "🔧 Using nightly toolchain with -Zmacro-backtrace"
+		info "Using nightly toolchain with -Zmacro-backtrace"
 	else
 		export RUSTFLAGS="-g"
-		info "🔧 Using stable toolchain (macro backtrace unavailable on stable)"
+		info "Using stable toolchain (macro backtrace unavailable on stable)"
 	fi
 
 	export CARGO_INCREMENTAL=1
@@ -197,7 +197,7 @@ build)
 		success "✓ Using cached librocksdb-sys"
 	else
 		warning "⚠ librocksdb-sys will be compiled (this may take a while)..."
-		warning "💡 Tip: Set SKIP_LIBROCKSDB_SYS_BUILD=true and install system rocksdb for faster builds"
+		warning "Tip: Set SKIP_LIBROCKSDB_SYS_BUILD=true and install system rocksdb for faster builds"
 	fi
 
 	START_TIME=$(date +%s)
@@ -209,7 +209,7 @@ build)
 		if [ -n "$DEBUG_MODE" ]; then
 			success "✓ Debug build completed in ${BUILD_TIME} seconds"
 			echo ""
-			info "🐛 Debug binary ready at: target/debug/kiwi"
+			info "Debug binary ready at: target/debug/kiwi"
 		else
 			success "✓ Build completed in ${BUILD_TIME} seconds"
 		fi
