@@ -142,9 +142,19 @@ Scripts automatically set:
 The `watch` command will:
 - Check if cargo-watch is installed
 - Prompt to install if not found
-- Automatically check code on file save
+- Automatically check code on file changes
 
 **Result**: Instant feedback (5-10 seconds) when you save!
+
+### 4. RocksDB Build Optimization
+
+The scripts automatically optimize RocksDB compilation:
+
+- **System Library Detection**: Checks for system-installed RocksDB and uses it if available
+- **Build Cache Status**: Shows whether using cached librocksdb-sys or recompiling
+- **Smart Fallback**: Falls back to compilation if system library unavailable
+
+**Result**: Skip expensive RocksDB recompilation when possible!
 
 ## Performance Tips
 
@@ -171,6 +181,27 @@ For maximum speed, install and configure sccache:
 ```
 
 After setup, compilation times can be reduced by 50-90%!
+
+### Use System RocksDB (Maximum Speed)
+
+For even faster builds, install RocksDB system-wide and skip compilation entirely:
+
+```bash
+# Install system RocksDB
+# macOS
+brew install rocksdb
+
+# Ubuntu/Debian
+sudo apt-get install librocksdb-dev
+
+# CentOS/RHEL
+sudo yum install rocksdb-devel
+
+# Then build with system library
+SKIP_LIBROCKSDB_SYS_BUILD=true ./scripts/dev.sh build
+```
+
+**Result**: Skip RocksDB compilation entirely (saves 10+ minutes)!
 
 ### Build Only What Changed
 

@@ -49,6 +49,26 @@ cargo build --release
 cargo run --release
 ```
 
+#### Build Optimization (Faster Compilation)
+
+Kiwi includes build optimizations to speed up compilation, especially for the RocksDB dependency:
+
+```bash
+# Use the development script (recommended)
+./scripts/dev.sh build
+
+# Or install sccache for faster recompilation
+./scripts/quick_setup.sh
+
+# For even faster builds, install system rocksdb and skip compilation
+SKIP_LIBROCKSDB_SYS_BUILD=true ./scripts/dev.sh build
+```
+
+**System RocksDB Installation:**
+- **macOS**: `brew install rocksdb`
+- **Ubuntu**: `apt-get install librocksdb-dev`
+- **CentOS**: `yum install rocksdb-devel`
+
 ### Using Development Scripts
 
 For faster development workflow, use the provided scripts:
